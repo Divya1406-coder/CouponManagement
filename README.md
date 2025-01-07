@@ -39,8 +39,8 @@ Getting Started
 Clone the Repository
 
 ```bash
-git clone https://github.com/your-repo/coupon-system-api.git
-cd coupon-system-api
+git clone https://github.com/Divya1406-coder/CouponManagement.git
+cd CouponManagement
 ```
 
 Build the Project
