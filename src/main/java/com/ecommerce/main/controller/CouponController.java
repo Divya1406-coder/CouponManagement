@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.ecommerce.main.model.ApplicableCoupon;
 import com.ecommerce.main.model.Cart;
+import com.ecommerce.main.model.CartWrapper;
 import com.ecommerce.main.model.Coupon;
 import com.ecommerce.main.service.CouponService;
 
@@ -49,12 +50,12 @@ public class CouponController {
 	}
 
 	@PostMapping("/applicable-coupons")
-	public List<ApplicableCoupon> getApplicableCoupons(@RequestBody Cart cart) {
-		return couponService.getApplicableCoupons(cart);
+	public List<ApplicableCoupon> getApplicableCoupons(@RequestBody CartWrapper cartWrapper) {
+		return couponService.getApplicableCoupons(cartWrapper.getCart());
 	}
 
 	@PostMapping("/apply-coupon/{id}")
-	public Cart applyCoupon(@PathVariable Long id, @RequestBody Cart cart) {
-		return couponService.applyCoupon(id, cart);
+	public Cart applyCoupon(@PathVariable Long id, @RequestBody CartWrapper cartWrapper) {
+		return couponService.applyCoupon(id, cartWrapper.getCart());
 	}
 }
